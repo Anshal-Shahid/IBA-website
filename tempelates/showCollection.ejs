@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/style/showCollection.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection Details</title>
+</head>
+
+<body>
+    <main>
+        <div class="div">
+            <h1>
+               Title: <span> <%= collection.name %></span>
+            </h1>
+            <p>Type:  <span> <%= collection.type %></span>
+            </p>
+            <p>Privacy: <span><%= collection.isPublic ? "Public" : "Private" %></span>
+            </p>
+
+            <% if (collection.items.length> 0) { %>
+                <h3>Uploaded Items:</h3>
+                <div class="files">
+                    <% collection.items.forEach(item=> { %>
+                        <% if (collection.type==="image" ) { %>
+                            <img src="/<%= item %>" alt="Collection Image" width="150px" height="150px">
+                            <% } else if (collection.type==="music" ) { %>
+                                <audio controls>
+                                    <source src="/uploads/<%= item %>" type="audio/mp3">
+                                    Your browser does not support the audio element.
+                                </audio>
+                                <% } else if (collection.type==="pdf" ) { %>
+                                    <a href="/uploads/<%= item %>" target="_blank">View PDF</a>
+                                    <% } else { %>
+                                        <a href="/uploads/<%= item %>" download>Download File</a>
+                                        <% } %>
+                                            <% }) %>
+                </div>
+                <% } else { %>
+                    <p>No items uploaded yet.</p>
+                    <% } %>
+
+        </div>
+    </main>
+</body>
+
+</html>

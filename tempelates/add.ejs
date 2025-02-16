@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/style/add.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <main>
+        <div class="container">
+            <form action="/add-collection" method="POST" enctype="multipart/form-data">
+                <div id="step1" class="step1">
+                    <label>Collection Type</label>
+                    <select name="type" id="collectionType" required>
+                        <option value="">Select Type</option>
+                        <option value="imsage">Image</option>
+                        <option value="music">Music</option>
+                        <option value="pdf">PDF</option>
+                        <option value="file">File</option>
+                        <!-- <option value="text">Text</option> -->
+                    </select>
+                    <button type="button" class="next-btn" onclick="showNextStep()">Next</button>
+                </div>
+
+                <div id="step2" class="hidden step2">
+                    <label>Collection Title</label>
+                    <input type="text" name="name" required>
+                    <label>Code</label>
+                    <input type="text" name="code" required>
+
+                    <!-- <label>Visibility</label> -->
+                    <div class="radio-group">
+                        <div>
+                            <p>Public</p>
+                            <input type="radio" name="isPublic" value="true" checked>
+                        </div>
+                        <div>
+                            <p>Private</p>
+                            <input type="radio" name="isPublic" value="false">
+
+                        </div>
+                    </div>
+
+                    <!-- Image Upload -->
+                    <div id="imageInputs" class="type-specific hidden">
+                        <label>Upload Images:</label>
+                        <div id="imageContainer" class="inputs">
+                            <input type="file" name="image" accept="image/*">
+                            <button type="button" class="add-btn"
+                                onclick="addInput('imageContainer', 'image', 'file', 'image/*')">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Music Upload -->
+                    <div id="musicInputs" class="type-specific hidden">
+                        <label>Upload Music:</label>
+                        <div id="musicContainer" class="inputs">
+                            <input type="file" name="music" accept="audio/*">
+                            <button type="button" class="add-btn"
+                                onclick="addInput('musicContainer', 'music', 'file', 'audio/*')">+</button>
+                        </div>
+                    </div>
+
+                    <!-- PDF Upload -->
+                    <div id="pdfInputs" class="type-specific hidden">
+                        <label>Upload PDF:</label>
+                        <div id="pdfContainer" class="inputs">
+                            <input type="file" name="pdf" accept="application/pdf">
+                            <button type="button" class="add-btn"
+                                onclick="addInput('pdfContainer', 'pdf', 'file', 'application/pdf')">+</button>
+                        </div>
+                    </div>
+
+                    <!-- File Upload -->
+                    <div id="fileInputs" class="type-specific hidden">
+                        <label>Upload Files:</label>
+                        <div id="fileContainer" class="inputs">
+                            <input type="file" name="file">
+                            <button type="button" class="add-btn"
+                                onclick="addInput('fileContainer', 'file', 'file')">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Text Entry -->
+                    <div id="textInputs" class="type-specific hidden">
+                        <label>Enter Text:</label>
+                        <div id="textContainer" class="inputs">
+                            <textarea name="text" rows="3"></textarea>
+                            <button type="button" class="add-btn"
+                                onclick="addInput('textContainer', 'text', 'textarea')">+</button>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Create Collection</button>
+                </div>
+            </form>
+        </div>
+
+    </main>
+    <script src="/script/addCollection.js"></script>
+</body>
+
+</html>

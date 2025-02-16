@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="/style/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <main>
+    <form action="/auth/login" method="POST">
+
+
+        <h1>Login Now</h1>
+
+        <div class="input">
+            <i class="fa-solid fa-envelope"></i>
+
+            <input type="email" name="email" placeholder="Email">
+        </div>
+
+        <div class="input">
+            <i class="fa-solid fa-key"></i>
+
+            <input type="password" name="password" placeholder="Password">
+        </div>
+
+        <button >Login</button>
+
+        <div class="text"><p>Not a Member? <a href="/auth/signup">SignUp</a></p></div>
+    </form>
+</main>
+</body>
+
+</html>

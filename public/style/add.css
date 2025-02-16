@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #E4952E;
+    --dark-color:#EE8F14;
+    /* --primary-color: rgb(191, 241, 241); */
+    --secondary-color: #F9EAD6;
+}
+
+@font-face {
+    font-family: roboto;
+    src: url('../fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf') format('truetype'),
+
+}
+
+body,
+html {
+    width: 100%;
+    overflow-x: clip;
+    font-size: 24px;
+
+}
+
+main{
+    display: flex;
+    align-items: center;
+    background-color: var(--secondary-color);
+    min-height: 100vh;
+    width: 100%;
+    justify-content: center;
+    font-family: roboto;
+}
+
+.step1{
+    margin: 0 auto;
+    width: 25rem;
+    height: 10rem;
+    padding: 1rem;
+    border-radius: 1.2rem;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    row-gap: .7rem;
+    align-items: center;
+}
+.step1 label{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.step1 select{
+    border: none;
+    height: 1.5rem;
+    width: 50%;
+    margin-top: 1.1rem;
+    align-self: flex-start;
+}
+.step1 option{
+    /* background-color: var(--secondary-color ); */
+    /* border-bottom: 1px solid; */
+}
+.step1 button{
+    border: none;
+    /* height: 1.2rem; */
+    /* border-radius: .8rem; */
+    padding: .25rem .9rem;
+    /* width: 40%; */
+    font-size: .8rem;
+    font-weight: bold;
+    background-color: white;
+    color: var(--primary-color);
+    align-self: flex-start;
+    margin-top: .12rem;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+
+
+
+.step2{
+    margin: 0 auto;
+    width: 25rem;
+    min-height: 10rem;
+    padding: 1rem;
+    border-radius: 1.2rem;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    row-gap: .7rem;
+    /* align-items: center; */
+}
+
+.step2 label{
+    font-size: 1.2rem;
+    color: white;
+}
+.step2 input{
+    border: none;
+
+    width: 70%;
+    height: 1.2rem;
+    border-radius: .3rem;
+    padding: .5rem;
+}
+
+.step2 .radio-group{
+    display: flex;
+    gap: 1rem;
+    color: white;
+}
+
+
+.step2 .inputs{
+    display: grid;
+    grid-template-columns: 1.5fr .2fr;
+
+    gap: .7rem;
+    margin-top: 1rem;
+}
+
+.step2 .inputs input{
+    z-index:  4 !important;
+}
+.step2 .inputs button{
+    padding: .5rem .6rem;
+    border: none;
+    border-radius: .3rem;
+    font-size: .8rem    ;
+    height: 100%;
+    &:hover{
+        cursor: pointer;
+        opacity: .9;
+    }
+}
+
+
+.step2 button{
+    width: fit-content;
+    padding: .3rem .7rem;
+    border: none;
+    border-radius: .5rem;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+
+
+
+
+
+
+.hidden {
+    display: none;
+}
+
+
+
+@media (max-width:730px) {
+    body,html{
+        font-size: 21px;
+    }
+}
+@media (max-width:620px) {
+    body,html{
+        font-size: 18px;
+    }
+}
+@media (max-width:520px) {
+    body,html{
+        font-size: 14.6px;
+    }
+    .step1,.step2{
+        width: 75vw;
+    }
+}

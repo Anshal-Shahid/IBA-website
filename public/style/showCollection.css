@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #E4952E;
+    --dark-color:#EE8F14;
+    /* --primary-color: rgb(191, 241, 241); */
+    --secondary-color: #F9EAD6;
+}
+
+@font-face {
+    font-family: roboto;
+    src: url('../fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf') format('truetype'),
+
+}
+
+@font-face {
+    font-family: ab;
+    src: url('../fonts/Roboto/Roboto-VariableFot_wdth\,wght.ttf') format('truetype'),
+
+}
+
+
+body,
+html {
+    width: 100%;
+    overflow-x: clip;
+    font-size: 24px;
+    background-color: var(--secondary-color);
+}
+main{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-color);
+    font-family: roboto;
+}
+
+.div{
+    background-color: var(--primary-color);
+    padding: 1rem;
+    border-radius: 1rem;
+    min-height: 80vh;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    /* align-items: center; */
+}
+
+.div h1{
+    /* background-color: var(--secondary-color); */
+    /* padding: 0rem 1rem; */
+    /* width: 100%; */
+}
+
+
+.div span{
+    color: var(--secondary-color);
+}
+
+.div .files > *{
+    border: 6px solid var(--secondary-color);
+    border-radius: .5rem;
+}
